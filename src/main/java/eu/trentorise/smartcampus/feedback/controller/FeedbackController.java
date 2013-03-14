@@ -92,7 +92,8 @@ public class FeedbackController {
 				return null;
 			}
 			feedback.setCreatorId(""+user.getId());
-
+			feedback.setUser(feedback.getCreatorId());
+			
 			if (file != null) {
 				String fileId = feedbackFileManager.storeFile(file.getBytes());
 				feedback.setFileId(fileId);
